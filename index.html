@@ -23,23 +23,36 @@
         section {
             /** Essential to have flexboxes */
             display: flex;
+            /** Important to deactivate unwanted scrolls on mobile */
             overflow-y: hidden;
             overflow-x: hidden;
         }
 
         .main {
-            display: flex;
             flex-direction: column;
-            flex: 2 1 auto;
+            height: 100%;
+            width: 100%;
         }
 
         .header {
             background-color: hotpink;
             height: 80px;
-            left: 0;
             position: fixed;
-            right: 0;
             top: 0;
+            right: 0;
+            left: 0;
+        }
+
+        .content-wrapper {
+            padding-top: 80px;
+            flex: 1;
+            height: 100%;
+            max-height: 100%;
+            flex-direction: column;
+            /** Where the magic happens for content/footer separation */
+            /** flex-grow = 1 | flex-shrink = 1 | flex-basis = auto*/
+            /** It allow the content to grow, shrink but have a basis height auto */
+            flex: 1 1 auto;
         }
 
         .content {
@@ -47,19 +60,19 @@
             min-height: 0;
             min-width: 0;
 
+            /** flex-grow = 0 | flex-shrink = 1 | flex-basis = auto*/
+            /** Means that the content should shrink when needed but not grow */
             flex: 0 1 auto;
             flex-direction: column;
-            overflow-x: hidden;
             overflow-y: auto;
-            padding: 16px 16px 0;
-            width: 100%;
         }
-
 
         .footer {
             border-top: 1px solid black;
             background-color: green;
             height: 60px;
+            /** flex-grow = 0 | flex-shrink = 0 | flex-basis = auto*/
+            /** It should not grow or shrink */
             flex: 0 0 auto;
         }
 
@@ -67,24 +80,6 @@
             padding: 0;
             margin: 0;
         }
-
-        .main {
-            flex-direction: column;
-            flex-grow: 1;
-            height: 100%;
-            width: 100%;
-        }
-
-        .content-under-header {
-            padding-top: 80px;
-            flex: 1;
-            height: 100%;
-            max-height: 100%;
-            flex-direction: column;
-            flex: 2 1 auto;
-        }
-
-        .content-wrapper {}
     </style>
 </head>
 
@@ -93,91 +88,10 @@
         <div>
             <div class="header"></div>
         </div>
-        <div class="content-under-header">
+        <div class="content-wrapper">
             <div class="content">
                 <p>Test12</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test1234</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>TestZ2324</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
+
                 <p>Test</p>
                 <p>Test</p>
                 <p>Test</p>

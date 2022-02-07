@@ -96,6 +96,26 @@
             background-color: green;
         }
     </style>
+
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * max);
+        }
+
+
+        function fillContentWithTestParagraphs() {
+            var contentElements = document.getElementsByClassName("content");
+            for (var i = 0; i < contentElements.length; i++) {
+                var nParagraphs = getRandomInt(68);
+                var innerHTML = (new Array(nParagraphs)).fill(undefined).map(function (_, index) {
+                    return "<p>Test" + index + "</p>"
+                }).join("");
+                contentElements[i].innerHTML = "<p>" + nParagraphs + " paragraphs</p>" + innerHTML;
+            }
+        }
+
+        setInterval(fillContentWithTestParagraphs, 2000);
+    </script>
 </head>
 
 <body>
@@ -105,77 +125,6 @@
         </div>
         <div class="content-wrapper">
             <div class="content red-background">
-                <p>Test12</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test1324A4A34</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test23243A4</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
-                <p>Test</p>
             </div>
             <div class="footer green-background">
             </div>

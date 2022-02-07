@@ -23,9 +23,6 @@
             align-items: stretch;
             border: 0 solid #000;
             box-sizing: border-box;
-            display: -webkit-box;
-            display: -webkit-flex;
-            display: -ms-flexbox;
             display: flex;
             flex-direction: column;
             flex-shrink: 0;
@@ -43,7 +40,6 @@
         }
 
         .header {
-            background-color: hotpink;
             height: 80px;
             left: 0;
             position: fixed;
@@ -52,24 +48,12 @@
         }
 
         .content {
-            background-color: red;
             flex: 1 1 auto;
             min-height: 0;
             min-width: 0;
         }
 
-        .display-flex {
-            display: flex;
-        }
-
-        p {
-            padding: 0;
-            margin: 0;
-        }
-
         .footer {
-            border-top: 1px solid black;
-            background-color: green;
             height: 60px;
             flex: 0 0 auto;
         }
@@ -81,7 +65,6 @@
 
         .flex-column-full- {
             display: flex;
-            -ms-flex-direction: column;
             flex-direction: column;
             flex-grow: 1;
             height: 100%;
@@ -119,6 +102,24 @@
             overflow-y: auto;
             padding: 16px 16px 0;
         }
+
+        /* Below classes are for the purpose of the demo */
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        .pink-background {
+            background-color: hotpink;
+        }
+
+        .red-background {
+            background-color: red;
+        }
+
+        .green-background {
+            background-color: green;
+        }
     </style>
     <script>
         function getRandomInt(max) {
@@ -144,11 +145,11 @@
 <body>
     <section class="flex-column-full- full-page">
         <div>
-            <div class="header"></div>
+            <div class="header pink-background"></div>
         </div>
         <div class="global-content">
             <div class="flex-2-1-auto">
-                <div class="content">
+                <div class="content red-background">
                     <div class="inner-content">
                         <p>Test12</p>
                         <p>Test</p>
@@ -305,7 +306,7 @@
                         <p>Test</p>
                     </div>
                 </div>
-                <div class="footer">
+                <div class="footer green-background">
                 </div>
             </div>
         </div>

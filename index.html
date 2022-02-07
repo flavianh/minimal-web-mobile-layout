@@ -11,7 +11,7 @@
             margin: 0;
             overflow-x: hidden;
             overflow-y: hidden;
-
+            /* For the purpose of the demo */
             --base-width: 15%
         }
 
@@ -24,16 +24,19 @@
         section {
             /** Essential to have flexboxes */
             display: flex;
+            flex-direction: column;
             /** Important to deactivate unwanted scrolls on mobile */
             overflow-y: hidden;
             overflow-x: hidden;
         }
+
 
         .main {
             flex-direction: column;
             height: 100%;
             /* For the purpose of the demo, 100% otherwise */
             width: var(--base-width);
+            border-left: 1px solid black;
         }
 
         .header {
@@ -42,31 +45,32 @@
             top: 0;
             right: 0;
             left: 0;
-            /* For the purpose of the demo */
+            /* For the purpose of the demo, 100% otherwise */
             width: var(--base-width)
         }
 
-        .content-wrapper {
+        .with-padding-for-header-fixed {
             padding-top: 80px;
+        }
+
+        .content-wrapper {
             flex: 1;
             height: 100%;
             max-height: 100%;
-            flex-direction: column;
         }
 
         .content {
-            min-height: 0;
-            min-width: 0;
 
             /** flex-grow = 1 | flex-shrink = 1 | flex-basis = auto*/
             /** Means that the content should shrink when needed but not grow */
             flex: 1 1 auto;
-            flex-direction: column;
+            min-height: 0;
+            min-width: 0;
+            overflow-y: auto;
         }
 
         .footer {
-            border-top: 1px solid black;
-            height: 60px;
+            height: 80px;
             /** flex-grow = 0 | flex-shrink = 0 | flex-basis = auto*/
             /** It should not grow or shrink */
             flex: 0 0 auto;
@@ -74,14 +78,6 @@
 
         .flex-2-1-auto {
             flex: 2 1 auto;
-        }
-
-        .inner-content {
-            /** flex-grow = 1 | flex-shrink = 1 | flex-basis = auto*/
-            /** Means that the content should shrink when needed but not grow */
-            flex: 0 1 auto;
-            flex-direction: column;
-            overflow-y: auto;
         }
 
         /* Below classes are for the purpose of the demo */
@@ -101,6 +97,12 @@
         .green-background {
             background-color: green;
         }
+
+        /* For the purpose of the demo */
+        .main-wrapper {
+            flex-direction: row;
+            height: 100%;
+        }
     </style>
 
     <script>
@@ -110,7 +112,7 @@
 
 
         function fillContentWithTestParagraphs() {
-            var contentElements = document.getElementsByClassName("inner-content");
+            var contentElements = document.getElementsByClassName("content");
             for (var i = 0; i < contentElements.length; i++) {
                 var nParagraphs = getRandomInt(68);
                 var innerHTML = (new Array(nParagraphs)).fill(undefined).map(function (_, index) {
@@ -125,15 +127,24 @@
 </head>
 
 <body>
-    <div class="main">
-        <div>
-            <div class="header pink-background">Header position fixed</div>
-        </div>
-        <div class="content-wrapper">
-            <div class="flex-2-1-auto">
+    <div class="main-wrapper">
+        <div class="main">
+            <div>
+                <div class="header pink-background">Header position fixed</div>
+            </div>
+            <div class="content-wrapper with-padding-for-header-fixed">
                 <div class="content red-background">
-                    <div class="inner-content">
-                    </div>
+                </div>
+                <div class="footer green-background">
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="content-wrapper">
+                <div class="footer pink-background">
+                    Or an inner header
+                </div>
+                <div class="content red-background">
                 </div>
                 <div class="footer green-background">
                 </div>

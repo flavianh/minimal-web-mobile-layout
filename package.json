@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "start": "npx http-server",
+    "expose": "npx localtunnel -p 8080"
+  }
+}

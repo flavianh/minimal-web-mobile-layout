@@ -12,7 +12,7 @@
             overflow-x: hidden;
             overflow-y: hidden;
             /* For the purpose of the demo */
-            --base-width: 15%
+            --base-width: 33%
         }
 
         article,
@@ -60,7 +60,6 @@
         }
 
         .content {
-
             /** flex-grow = 1 | flex-shrink = 1 | flex-basis = auto*/
             /** Means that the content should shrink when needed but not grow */
             flex: 1 1 auto;
@@ -112,9 +111,9 @@
 
 
         function fillContentWithTestParagraphs() {
-            var contentElements = document.getElementsByClassName("content");
+            var contentElements = document.getElementsByClassName("with-generated-content");
             for (var i = 0; i < contentElements.length; i++) {
-                var nParagraphs = getRandomInt(68);
+                var nParagraphs = getRandomInt(200);
                 var innerHTML = (new Array(nParagraphs)).fill(undefined).map(function (_, index) {
                     return "<p>Test" + index + "</p>"
                 }).join("");
@@ -133,21 +132,71 @@
                 <div class="header pink-background">Header position fixed</div>
             </div>
             <div class="content-wrapper with-padding-for-header-fixed">
-                <div class="content red-background">
+                <div class="content with-generated-content red-background">
                 </div>
                 <div class="footer green-background">
                 </div>
             </div>
         </div>
         <div class="main">
-            <div class="content-wrapper">
-                <div class="footer pink-background">
+            <div class="footer pink-background">
+                Or an inner header
+            </div>
+            <div class="content with-generated-content red-background">
+            </div>
+            <div class="footer green-background">
+            </div>
+        </div>
+        <div class="main">
+            <div class="footer pink-background">
+                Or an inner header
+            </div>
+            <div class="content red-background">
+                <div class="footer green-background">
                     Or an inner header
                 </div>
                 <div class="content red-background">
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
+                    <p>Test</p>
                 </div>
-                <div class="footer green-background">
+                <div class="footer pink-background">
                 </div>
+            </div>
+            <div class="footer green-background">
             </div>
         </div>
     </div>

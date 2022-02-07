@@ -48,22 +48,26 @@
         }
 
         .content-wrapper {
+            align-items: stretch;
             padding-top: 80px;
             flex: 1;
             height: 100%;
             max-height: 100%;
             flex-direction: column;
-            /** Where the magic happens for content/footer separation */
-            /** flex-grow = 1 | flex-shrink = 1 | flex-basis = auto*/
-            /** It allow the content to grow, shrink but have a basis height auto */
-            flex: 1 1 auto;
         }
 
         .content {
             min-height: 0;
             min-width: 0;
 
-            /** flex-grow = 0 | flex-shrink = 1 | flex-basis = auto*/
+            /** flex-grow = 1 | flex-shrink = 1 | flex-basis = auto*/
+            /** Means that the content should shrink when needed but not grow */
+            flex: 1 1 auto;
+            flex-direction: column;
+        }
+
+        .inner-content {
+            /** flex-grow = 1 | flex-shrink = 1 | flex-basis = auto*/
             /** Means that the content should shrink when needed but not grow */
             flex: 0 1 auto;
             flex-direction: column;
@@ -76,6 +80,19 @@
             /** flex-grow = 0 | flex-shrink = 0 | flex-basis = auto*/
             /** It should not grow or shrink */
             flex: 0 0 auto;
+        }
+
+        .flex-2-1-auto {
+            align-items: stretch;
+            flex: 2 1 auto;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            margin: 0;
+            padding: 0;
+            position: relative;
+            overflow-y: hidden;
+            overflow-x: hidden;
         }
 
         /* Below classes are for the purpose of the demo */
@@ -104,7 +121,7 @@
 
 
         function fillContentWithTestParagraphs() {
-            var contentElements = document.getElementsByClassName("content");
+            var contentElements = document.getElementsByClassName("inner-content");
             for (var i = 0; i < contentElements.length; i++) {
                 var nParagraphs = getRandomInt(68);
                 var innerHTML = (new Array(nParagraphs)).fill(undefined).map(function (_, index) {
@@ -124,9 +141,13 @@
             <div class="header pink-background">Header position fixed</div>
         </div>
         <div class="content-wrapper">
-            <div class="content red-background">
-            </div>
-            <div class="footer green-background">
+            <div class="flex-2-1-auto">
+                <div class="content red-background">
+                    <div class="inner-content">
+                    </div>
+                </div>
+                <div class="footer green-background">
+                </div>
             </div>
         </div>
     </div>

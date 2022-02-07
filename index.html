@@ -15,7 +15,6 @@
             --base-width: 15%
         }
 
-        #react-root,
         article,
         div,
         footer,
@@ -48,7 +47,6 @@
         }
 
         .content-wrapper {
-            align-items: stretch;
             padding-top: 80px;
             flex: 1;
             height: 100%;
@@ -66,14 +64,6 @@
             flex-direction: column;
         }
 
-        .inner-content {
-            /** flex-grow = 1 | flex-shrink = 1 | flex-basis = auto*/
-            /** Means that the content should shrink when needed but not grow */
-            flex: 0 1 auto;
-            flex-direction: column;
-            overflow-y: auto;
-        }
-
         .footer {
             border-top: 1px solid black;
             height: 60px;
@@ -83,16 +73,15 @@
         }
 
         .flex-2-1-auto {
-            align-items: stretch;
             flex: 2 1 auto;
-            display: flex;
+        }
+
+        .inner-content {
+            /** flex-grow = 1 | flex-shrink = 1 | flex-basis = auto*/
+            /** Means that the content should shrink when needed but not grow */
+            flex: 0 1 auto;
             flex-direction: column;
-            flex-shrink: 0;
-            margin: 0;
-            padding: 0;
-            position: relative;
-            overflow-y: hidden;
-            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         /* Below classes are for the purpose of the demo */

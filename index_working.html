@@ -34,18 +34,26 @@
         }
 
         .main {
-            display: flex;
             flex-direction: column;
-            flex: 2 1 auto;
+            height: 100%;
+            width: 100%;
         }
 
         .header {
             height: 80px;
-            left: 0;
             position: fixed;
-            right: 0;
             top: 0;
+            right: 0;
+            left: 0;
         }
+
+        .content-wrapper {
+            padding-top: 80px;
+            flex: 1;
+            height: 100%;
+            max-height: 100%;
+        }
+
 
         .content {
             flex: 1 1 auto;
@@ -58,41 +66,8 @@
             flex: 0 0 auto;
         }
 
-        .full-page {
-            height: 100%;
-            width: 100%;
-        }
-
-        .flex-column-full- {
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-            height: 100%;
-        }
-
-        .global-content {
-            padding-top: 80px;
-            flex: 1;
-            height: 100%;
-            max-height: 100%;
-        }
-
-        .full-page-row {
-            flex-direction: row;
-            height: 100%;
-            width: 100%;
-        }
-
         .flex-2-1-auto {
             flex: 2 1 auto;
-        }
-
-        .align-items-strech {
-            align-items: stretch;
-        }
-
-        .display-flex {
-            display: flex;
         }
 
         .inner-content {
@@ -143,174 +118,21 @@
 </head>
 
 <body>
-    <section class="flex-column-full- full-page">
+    <div class="main">
         <div>
-            <div class="header pink-background"></div>
+            <div class="header pink-background">Header position fixed</div>
         </div>
-        <div class="global-content">
+        <div class="content-wrapper">
             <div class="flex-2-1-auto">
                 <div class="content red-background">
                     <div class="inner-content">
-                        <p>Test12</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test1234</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>TestZ2324</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test1324A4A34</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test23243A4</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
-                        <p>Test</p>
                     </div>
                 </div>
                 <div class="footer green-background">
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </body>
 
 </html>

@@ -11,6 +11,8 @@
             margin: 0;
             overflow-x: hidden;
             overflow-y: hidden;
+
+            --base-width: 10%
         }
 
         #react-root,
@@ -31,16 +33,18 @@
         .main {
             flex-direction: column;
             height: 100%;
-            width: 100%;
+            /* For the purpose of the demo, 100% otherwise */
+            width: var(--base-width);
         }
 
         .header {
-            background-color: hotpink;
             height: 80px;
             position: fixed;
             top: 0;
             right: 0;
             left: 0;
+            /* For the purpose of the demo */
+            width: var(--base-width)
         }
 
         .content-wrapper {
@@ -56,7 +60,6 @@
         }
 
         .content {
-            background-color: red;
             min-height: 0;
             min-width: 0;
 
@@ -69,7 +72,6 @@
 
         .footer {
             border-top: 1px solid black;
-            background-color: green;
             height: 60px;
             /** flex-grow = 0 | flex-shrink = 0 | flex-basis = auto*/
             /** It should not grow or shrink */
@@ -80,16 +82,28 @@
             padding: 0;
             margin: 0;
         }
+
+        .pink-background {
+            background-color: hotpink;
+        }
+
+        .red-background {
+            background-color: red;
+        }
+
+        .green-background {
+            background-color: green;
+        }
     </style>
 </head>
 
 <body>
     <div class="main">
         <div>
-            <div class="header"></div>
+            <div class="header pink-background"></div>
         </div>
         <div class="content-wrapper">
-            <div class="content">
+            <div class="content red-background">
                 <p>Test12</p>
 
                 <p>Test</p>
@@ -163,7 +177,7 @@
                 <p>Test</p>
                 <p>Test</p>
             </div>
-            <div class="footer">
+            <div class="footer green-background">
             </div>
         </div>
     </div>
